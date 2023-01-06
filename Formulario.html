@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Solicitud de credito</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="css/opensans-font.css">
+	<link rel="stylesheet" type="text/css"
+		href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- datepicker -->
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<!-- Main Style Css -->
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+	<div class="page-content">
+		<div class="wizard-heading">Formulario Solicitudes</div>
+		<div class="wizard-v6-content">
+			<div class="wizard-form">
+				<form class="form-register" id="form-register" action="" method="post">
+					<div id="form-total">
+						<!-- SECTION 1 -->
+						<h2>
+							<p class="step-icon"><span>1</span></p>
+							<span class="step-text">Información Personal</span>
+						</h2>
+						<section>
+							<div class="inner">
+								<div class="form-heading">
+									<h3>Información Personal</h3>
+									<span>1/3</span>
+								</div>
+								<div class="form-row">
+									<div class="form-holder">
+										<label class="form-row-inner">
+											<input type="text" class="form-control" id="first_name" name="first_name"
+												required>
+											<span class="label" style="color:#55e8d5;">Primer Nombre</span>
+										</label>
+									</div>
+									<div class="form-holder">
+										<label class="form-row-inner">
+											<input type="text" class="form-control" id="second_name" name="second_name"
+												required>
+											<span class="label" style="color:#55e8d5;">Segundo Nombre</span>
+										</label>
+									</div>
+									<div class="form-holder">
+										<label class="form-row-inner">
+											<input type="text" class="form-control" id="last_name" name="last_name"
+												required>
+											<span class="label" style="color:#55e8d5;">Primer Apellido</span>
+										</label>
+									</div>
+									<div class="form-holder">
+										<label class="form-row-inner">
+											<input type="text" class="form-control" id="last2_name" name="last2_name"
+												required>
+											<span class="label" style="color:#55e8d5;">Segundo Apellido</span>
+										</label>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder">
+										<label for="room" class="special-label-1">Seleccione Tipo de Documento</label>
+										<select name="room" id="room" class="form-control">
+											<option value="" selected>Tipo de Documento</option>
+											<option value="Cedula">Cedula</option>
+											<option value="NIT">NIT</option>
+											<option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
+										</select>
+										<span class="select-btn">
+											<i class="zmdi zmdi-chevron-down"></i>
+										</span>
+									</div>
+									<div class="form-holder" style="margin-top: 25px;">
+										<label class="form-row-inner">
+											<input type="text" class="form-control" id="Documento" name="Documento"
+												required>
+											<span class="label" style="color:#55e8d5;">Número de Documento</span>
+										</label>
+									</div>
+									<div class="form-holder">
+										<label for="room" class="special-label-1">Seleccione su País</label>
+										<select name="room" id="room" class="form-control">
+											<option value="" selected> País</option>
+											<option value="Colombia">Colombia</option>
+											<option value="Panama">Panama</option>
+											<option value="Estados unidos">Estados unidos</option>
+										</select>
+										<span class="select-btn">
+											<i class="zmdi zmdi-chevron-down"></i>
+										</span>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder">
+										<label for="time" class="special-label-1">Ciudad</label>
+										<select name="time" id="time" class="form-control">
+											<option value="" selected>Selecione Ciudad</option>
+											<option value="Cali">Cali</option>
+											<option value="Bogotá">Bogotá</option>
+											<option value="Medellin">Medellin</option>
+											<option value="Palmira">Palmira</option>
+											<option value="Armenia">Armenia</option>
+											<option value="Manizales">Manizales</option>
+											<option value="Jamundi">Jamundi</option>
+											<option value="Cartagena">Cartagena</option>
+										</select>
+										<span class="select-btn">
+											<i class="zmdi zmdi-chevron-down"></i>
+										</span>
+									</div>
+									<div class="form-holder" style="margin-top: 25px;">
+										<label class="form-row-inner">
+											<input type="text" name="Fijo" id="Fijo" class="form-control" required>
+											<span class="label" style="color:#55e8d5;">Contacto Fijo</span>
+										</label>
+									</div>
+									<div class="form-holder" style="margin-top: 25px;">
+										<label class="form-row-inner">
+											<input type="text" name="Celular" id="Celular" class="form-control"
+												required>
+											<span class="label" style="color:#55e8d5;">Celular</span>
+										</label>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder" style="margin-top: 25px;">
+										<label class="form-row-inner">
+											<input type="text" class="form-control" id="Email" name="Email" required>
+											<span class="label" style="color:#55e8d5;">Email</span>
+										</label>
+									</div>
+									<div class="form-holder">
+										<label for="day" class="special-label-1">Fecha de  Nacimiento: </label>
+										<input type="date"  placeholder="15 / 08 / 2018">
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label class="form-row-inner">
+											<select name="solicitud" id="solicitud" class="form-control"
+												onChange="mostrar(this.value);" style="border-radius: 8px;">
+												<option value="" selected>Tipo de solicitud</option>
+												<option value="PólizaAuto">PÓLIZA AUTOS</option>
+												<option value="PólizaVida">PÓLIZA VIDA</option>
+												<option value="PolizaHogar">PÓLIZA HOGAR</option>
+												<option value="Credito">CRÉDITO</option>
+											</select>
+										</label>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- SECTION 2 -->
+						<script type="text/javascript">
+							function mostrar(id) {
+								if (id == "PólizaAuto") {
+									$("#PólizaAuto").show();
+									$("#PólizaVida").hide();
+									$("#Credito").hide();
+									$("#PolizaHogar").hide();
+								}
+
+								if (id == "PólizaVida") {
+									$("#PólizaAuto").hide();
+									$("#PólizaVida").show();
+									$("#Credito").hide();
+									$("#PolizaHogar").hide();
+								}
+								
+								if (id == "PolizaHogar") {
+									$("#PólizaAuto").hide();
+									$("#PólizaVida").hide();
+									$("#Credito").hide();
+									$("#PolizaHogar").show();
+								}
+
+								if (id == "Credito") {
+									$("#PólizaAuto").hide();
+									$("#PólizaVida").hide();
+									$("#Credito").show();
+									$("#PolizaHogar").hide();
+								}
+								if (id == "") {
+									$("#PólizaAuto").hide();
+									$("#PólizaVida").hide();
+									$("#Credito").hide();
+									$("#PolizaHogar").hide();
+								}
+							}
+						</script>
+						<style>
+							.img {
+								width: 800px;
+								height: 250px;
+							}
+
+							.img2 {
+								width: 800px;
+								height: 250px;
+							}
+						</style>
+						<div id="PólizaAuto" hidden>
+							<h2>
+								<p class="step-icon"><span>2</span></p>
+								<span class="step-text">Póliza Auto</span>
+							</h2>
+							<section>
+								<div class="inner">
+									<div class="form-heading">
+										<h3>Informacion Póliza Auto</h3>
+										<span>2/3</span>
+									</div>
+									<div class="form-images">
+										<img src="images/proxy-imag04e.jpg" alt="Auto" class="img">
+									</div>
+									<div class="form-row">
+										<div class="form-holder">
+											<label for="room" class="special-label-1">Seleccione Tipo de Persona</label>
+											<select name="room" id="room" class="form-control">
+												<option value="" selected>Tipo de Persona</option>
+												<option value="Cedula">Natural</option>
+												<option value="NIT">Juridica</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder">
+											<label for="room" class="special-label-1">Beneficiario Oneroso</label>
+											<select name="room" id="room" class="form-control">
+												<option value="" selected>Seleccione</option>
+												<option value="No">No</option>
+												<option value="Si">Si</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder">
+											<label for="room" class="special-label-1">Si Tiene Oneroso, Cual Banco</label>
+											<select name="room" id="room" class="form-control">
+												<option value="" selected>Seleccione Banco</option>
+												<option value="" >No tiengo Oneroso</option>
+												<option value="Bancolombia">Bancolombia</option>
+												<option value="BBVA">BBVA</option>
+												<option value="NEQUI">NEQUI</option>
+												<option value="Banco de bogota">Banco de bogota</option>
+												<option value="Davivienda">Davivienda</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+									<div class="form-row">
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Aseguradora
+												</span>
+											</label>
+										</div>
+										<div class="form-holder">
+											<label for="room" class="special-label-1">Seleccione Forma de pago</label>
+											<select name="room" id="room" class="form-control">
+												<option value="" selected>Forma de pago</option>
+												<option value="Cedula">Mensual</option>
+												<option value="Cedula">Trimestral</option>
+												<option value="Cedula">Semestral</option>
+												<option value="NIT">Anual</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Placa</span>
+											</label>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+									<div class="form-row">
+										<div class="form-holder">
+											<label for="time" class="special-label-1">Ciudad</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Selecione Ciudad</option>
+												<option value="Cali">Cali</option>
+												<option value="Bogotá">Bogotá</option>
+												<option value="Medellin">Medellin</option>
+												<option value="Palmira">Palmira</option>
+												<option value="Armenia">Armenia</option>
+												<option value="Manizales">Manizales</option>
+												<option value="Jamundi">Jamundi</option>
+												<option value="Cartagena">Cartagena</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Valor Asegurado</span>
+											</label>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+								</div>
+							</section>
+						</div>
+						<!--Fin Formulario Póliza Auto-->
+						<div id="PólizaVida" hidden>
+							<h2>
+								<p class="step-icon"><span>2</span></p>
+								<span class="step-text">Póliza Vida</span>
+							</h2>
+							<section>
+								<div class="inner">
+									<div class="form-heading">
+										<h3>Informacion Póliza Vida</h3>
+										<span>2/3</span>
+									</div>
+									<div class="form-images">
+										<img src="images/proxy-image3.png" alt="wizard_v6" class="img2">
+									</div>
+									<div class="form-row">
+										<div class="form-holder"style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Valor Asegurado</span>
+											</label>
+										</div>
+										<div class="form-holder">
+											<label for="room" class="special-label-1">Beneficiario Oneroso</label>
+											<select name="room" id="room" class="form-control">
+												<option value="" selected>Seleccione</option>
+												<option value="No">No</option>
+												<option value="Si">Si</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder">
+											<label for="room" class="special-label-1">Si Tiene Oneroso, Cual Banco</label>
+											<select name="room" id="room" class="form-control">
+												<option value="" selected>Seleccione Banco</option>
+												<option value="" >No tiengo Oneroso</option>
+												<option value="Bancolombia">Bancolombia</option>
+												<option value="BBVA">BBVA</option>
+												<option value="NEQUI">NEQUI</option>
+												<option value="Banco de bogota">Banco de bogota</option>
+												<option value="Davivienda">Davivienda</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+									</div>
+									<!--Fin row de formulario-->																		
+									<!--Empezar desde aqui la parte nueva del formulario Póliza Vida-->
+									<div class="form-row">
+										<div class="form-holder" style="margin-top: 75px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Estatura en mts</span>
+											</label>
+										</div>
+										<div class="form-holder" style="margin-top: 75px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Peso en kg</span>
+											</label>
+										</div>
+										<div class="form-holder">
+											<label for="time" class="special-label-1">Sufre de alguna enfermedad, alguna pre existencia?</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected></option>
+												<option value="2017">Si</option>
+												<option value="2017">No</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder" style="margin-top: 75px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">¿Cual?</span>
+											</label>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+									<div class="form-row">
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">¿Que cantidad estaria dispuesto a pagar?</span>
+											</label>
+										</div>
+											<div class="form-holder">
+											<label for="time" class="special-label-1">Ocupación</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Ocupación</option>
+												<option value="2017">Comerciante</option>
+												<option value="2017">Desempleado con ingresos</option>
+												<option value="2017">Desempleado sin ingresos</option>
+												<option value="2017">Empleado</option>
+												<option value="2016">Independiente</option>
+												<option value="2015">Pensionado</option>
+												<option value="2015">Empresario</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+									<div class="form-heading">
+										<h3>Informacion Póliza Vida Deudor</h3>
+									</div>
+									<div class="form-row">
+										<div class="form-holder" style="margin-top: 75px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Último extracto del crédito</span>
+											</label>
+										</div>
+										<div class="form-holder" style="margin-top: 50px;">
+											<label for="day" class="special-label-1">Duracion: </label>
+											<input type="date"  placeholder="15 / 08 / 2018">
+										</div>
+										<div class="form-holder">
+											<label for="time" class="special-label-1">¿En el crédito aparece usted sólo como titular o aparece con algún familiar?</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Seleccione</option>
+												<option value="2017">Si</option>
+												<option value="2017">No</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+									</div>
+									<!--Fin de row formulario-->
+									<div class="form-row">
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Aseguradora
+												</span>
+											</label>
+										</div>
+										<div class="form-holder">
+											<label for="room" class="special-label-1">Seleccione Tipo de Persona</label>
+											<select name="room" id="room" class="form-control">
+												<option value="" selected>Tipo de Persona</option>
+												<option value="Cedula">Natural</option>
+												<option value="NIT">Juridica</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder">
+											<label for="room" class="special-label-1">Seleccione Forma de pago</label>
+											<select name="room" id="room" class="form-control">
+												<option value="" selected>Forma de pago</option>
+												<option value="Cedula">Mensual</option>
+												<option value="Cedula">Trimestral</option>
+												<option value="Cedula">Semestral</option>
+												<option value="NIT">Anual</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>		
+						<!--Fin Formulario Póliza Vida-->
+						<div id="PolizaHogar" hidden>
+							<h2>
+								<p class="step-icon"><span>2</span></p>
+								<span class="step-text">Crédito</span>
+							</h2>
+							<section>
+								<div class="inner">
+									<div class="form-heading">
+										<h3>Informacion de Póliza Hogar</h3>
+										<span>2/3</span>
+									</div>
+									<div class="form-row">
+										<div class="form-holder">
+											<label for="room" class="special-label-1">Seleccione Tipo de Persona</label>
+											<select name="room" id="room" class="form-control">
+												<option value="" selected>Tipo de Persona</option>
+												<option value="Cedula">Natural</option>
+												<option value="NIT">Juridica</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder">
+											<label for="room" class="special-label-1">Beneficiario Oneroso</label>
+											<select name="room" id="room" class="form-control">
+												<option value="" selected>Seleccione</option>
+												<option value="No">No</option>
+												<option value="Si">Si</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder">
+											<label for="room" class="special-label-1">Si Tiene Oneroso, Cual Banco</label>
+											<select name="room" id="room" class="form-control">
+												<option value="" selected>Seleccione Banco</option>
+												<option value="" >No tiengo Oneroso</option>
+												<option value="Bancolombia">Bancolombia</option>
+												<option value="BBVA">BBVA</option>
+												<option value="NEQUI">NEQUI</option>
+												<option value="Banco de bogota">Banco de bogota</option>
+												<option value="Davivienda">Davivienda</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+									<div class="form-row">
+										<div class="form-holder">
+											<label for="time" class="special-label-1">Año de Construcción</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Año</option>
+												<option value="2017">1960</option>
+												<option value="2017">1970</option>
+												<option value="2017">2018</option>
+												<option value="2017">2019</option>
+												<option value="2016">2020</option>
+												<option value="2015">2021</option>
+												<option value="2014">2022</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder">
+											<label for="time" class="special-label-1">Estrato</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Estrato</option>
+												<option value="2017">1</option>
+												<option value="2017">2</option>
+												<option value="2017">3</option>
+												<option value="2017">4</option>
+												<option value="2016">5</option>
+												<option value="2015">6</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Mt2</span>
+											</label>
+										</div>
+										<div class="form-holder">
+											<label for="time" class="special-label-1">Numero de Pisos</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Pisos</option>
+												<option value="2017">1</option>
+												<option value="2017">2</option>
+												<option value="2017">3</option>
+												<option value="2017">4</option>
+												<option value="2016">5</option>
+												<option value="2015">6</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder">
+											<label for="day" class="special-label-1">Duracion: </label>
+											<input type="date"  placeholder="15 / 08 / 2018">
+										</div>
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Aseguradora
+												</span>
+											</label>
+										</div>
+										<div class="form-holder">
+											<label for="room" class="special-label-1">Seleccione Forma de pago</label>
+											<select name="room" id="room" class="form-control">
+												<option value="" selected>Forma de pago</option>
+												<option value="Cedula">Mensual</option>
+												<option value="Cedula">Trimestral</option>
+												<option value="Cedula">Semestral</option>
+												<option value="NIT">Anual</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+									<div class="form-row">
+										<div class="form-holder">
+											<label for="time" class="special-label-1">Tipo de Vivienda</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Tipo</option>
+												<option value="2017">Casa</option>
+												<option value="2017">Apartamento</option>
+												<option value="2017">Apartaestudio</option>
+												<option value="2017">Finca</option>
+												<option value="2017">Edificio</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner" >
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Avalúo
+												</span>
+											</label>
+										</div>
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="Direccion" name="Direccion"
+													required>
+												<span class="label" style="color:#55e8d5;">Direccion</span>
+											</label>
+										</div>
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Valor Asegurado</span>
+											</label>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+								</div>
+							</section>
+						</div>
+						<!-- SECTION 3 -->
+						<style>
+							.Button1 {
+								background-color: #55e8d5;
+								border-radius: 8px;
+								color: white;
+								background-size: 50px 50px;
+								border: 1px solid;
+								padding: 10px;
+								text-decoration: none;
+								font-family: 'Open Sans', sans-serif;
+								margin: 8px;
+							}
+							.Button1:hover{
+								background-color: #0a7566;
+							}
+						</style>
+						<div id="Credito" hidden>
+							<h2>
+								<p class="step-icon"><span>2</span></p>
+								<span class="step-text">Crédito</span>
+							</h2>
+							<section>
+								<div class="inner">
+									<div class="form-heading">
+										<h3>Informacion del Crédito</h3>
+										<span>2/3</span>
+									</div>
+									<div class="form-row" style="margin-bottom: 15px;">
+										<div class="form-holder" style="margin-bottom: 25px;">
+											<a href="/Credito.html" id="Button1" class="Button1">Ir al Simulador</a>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+									<div class="form-row">
+										<div class="form-holder">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Valor de inversion Total</span>
+											</label>
+										</div>
+										<div class="form-holder">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Plazo</span>
+											</label>
+										</div>
+										<div class="form-holder">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required value="4%">
+												<span class="label" style="color:#55e8d5;">Tasa de Interes
+												</span>
+											</label>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+									<div class="form-row">
+										<div class="form-holder">
+											<label for="time" class="special-label-1">Tipo de Vivienda</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Tipo</option>
+												<option value="2017">Casa</option>
+												<option value="2017">Apartamento</option>
+												<option value="2017">Apartaestudio</option>
+												<option value="2017">Finca</option>
+												<option value="2017">Edificio</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner" >
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Avalúo
+												</span>
+											</label>
+										</div>
+										<div class="form-holder">
+											<label for="time" class="special-label-1">Vehiculo</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Vehiculo</option>
+												<option value="2017">Carro</option>
+												<option value="2017">Moto</option>
+												<option value="2017">Bus</option>
+												<option value="2017">Ninguno</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder">
+											<label for="time" class="special-label-1">Estado Civil</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Estado Civil</option>
+												<option value="2017">Soltero</option>
+												<option value="2017">Casado</option>
+												<option value="2017">Unión Libre</option>
+												<option value="2017">Divorciado</option>
+												<option value="2016">Separado</option>
+												<option value="2015">Viudo</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+									<div class="form-row">
+										<div class="form-holder">
+											<label for="time" class="special-label-1">Genero</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Genero</option>
+												<option value="2017">Masculino</option>
+												<option value="2017">Femenino</option>
+												<option value="2017">No Binario</option>
+												<option value="2017">Otro</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Personas a Cargo
+												</span>
+											</label>
+										</div>
+										<div class="form-holder">
+											<label for="time" class="special-label-1">Estudio</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Estudio</option>
+												<option value="2017">ninguno</option>
+												<option value="2017">Primaria </option>
+												<option value="2017">Bachiller</option>
+												<option value="2017">Profesional</option>
+												<option value="2017">Especialista</option>
+												<option value="2017">Maestria</option>
+												<option value="2017">Doctorado</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder">
+											<label for="time" class="special-label-1">Ocupación</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Ocupación</option>
+												<option value="2017">Comerciante</option>
+												<option value="2017">Desempleado con ingresos</option>
+												<option value="2017">Desempleado sin ingresos</option>
+												<option value="2017">Empleado</option>
+												<option value="2016">Independiente</option>
+												<option value="2015">Pensionado</option>
+												<option value="2015">Empresario</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+									<div class="form-row">
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Salario Básico</span>
+											</label>
+										</div>
+										<div class="form-holder">
+											<label for="time" class="special-label-1">Tipo Contrato</label>
+											<select name="time" id="time" class="form-control">
+												<option value="" selected>Tipo Contrato</option>
+												<option value="2017">Contratista</option>
+												<option value="2017">Termino Fijo</option>
+												<option value="2017">Termino Indefinido</option>
+												<option value="2017">Obra o Labor</option>
+												<option value="2016">Prestación de Servicios</option>
+												<option value="2015">Temporal</option>
+											</select>
+											<span class="select-btn">
+												<i class="zmdi zmdi-chevron-down"></i>
+											</span>
+										</div>
+										<div class="form-holder" >
+											<label for="day" class="special-label-1">Fecha Inicio Del contrato: </label>
+											<input type="text" name="day" class="day" id="day" placeholder="15 / 08 / 2018">
+										</div>
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Total Activos : 
+												</span>
+											</label>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+									<div class="form-row">
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Total Activos : </span>
+											</label>
+										</div>
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Nit de la empresa : </span>
+											</label>
+										</div>
+										<div class="form-holder" style="margin-top: 25px;">
+											<label class="form-row-inner">
+												<input type="text" class="form-control" id="first_name"
+													name="first_name" required>
+												<span class="label" style="color:#55e8d5;">Nombre de la empresa: </span>
+											</label>
+										</div>
+									</div>
+									<!--Fin row de formulario-->
+								</div>
+							</section>
+						</div>
+						<!-- SECTION 3 -->
+						<h2>
+							<p class="step-icon"><span>3</span></p>
+							<span class="step-text">Confirmación</span>
+						</h2>
+						<section>
+							<div class="inner">
+								<div class="form-heading">
+									<h3>Confirmación</h3>
+									<span>3/3</span>
+								</div>
+								<div class="table-responsive">
+									<table class="table">
+										<tbody>
+											<tr class="space-row">
+												<th>Nombre Completo:</th>
+												<td id="fullname-val"></td>
+											</tr>
+											<tr class="space-row">
+												<th>Documento:</th>
+												<td id="room-val"></td>
+											</tr>
+											<tr class="space-row">
+												<th>Emai:</th>
+												<td id="day-val"></td>
+											</tr>
+											<tr class="space-row">
+												<th>Direccion:</th>
+												<td id="time-val"></td>
+											</tr>
+											<tr class="space-row">
+												<th><a href="/Cuenta.html" id="Button1" class="Button1">Ir a Cuenta</a></th>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</section>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.steps.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
